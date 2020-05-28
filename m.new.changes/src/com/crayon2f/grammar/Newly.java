@@ -4,6 +4,7 @@ import com.crayon2f.interfaces.GenericInterface;
 import org.junit.Test;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Instant;
@@ -56,7 +57,8 @@ public class Newly {
 
         //new :
         BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\feifan.gou\\Desktop\\vim.txt"));
-        try (reader) {
+        FileInputStream fis = new FileInputStream("");
+        try (reader;fis) {
             String temp;
             while (null != (temp = reader.readLine())) {
                 System.out.println(temp);
